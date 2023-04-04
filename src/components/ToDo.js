@@ -4,19 +4,21 @@ import './ToDo.css'
 
 function ToDo() {
 
-  const [currentID, setCurrentID] = useState(1)
-  var [todo,setTodo] = useState([])
-  const list = todo.map(task => <li>{task}</li>)
+  const [task,setTask] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
-  const AddTask = (e) => {
-    e.preventDefault();
-    let x=e.target[0].value;
-    if(x!=""){
-      setTodo([...todo, x]);
-      e.target[0].value="";
-    }
+  const textChanged = (e) => {
+    setTask(e.target.value);
   }
 
+  const AddTask = () => {
+    if(task!=""){
+      setTaskList(
+        [...taskList,task]
+      )
+      setTask("")
+    }
+  }
 
   return (
     <div className='Main'>
@@ -24,14 +26,18 @@ function ToDo() {
         <h1 className="Logo">ToDo</h1>
       </div>
 
-      <h1 className='MainHeading'>Manage Your Tasks</h1>
+      <h1 className='MainHeading'>Manage Your Tasks</h1>  
+      <div className='NewTask'>
+        <input type="text" name="" id="" value={task} onChange={textChanged} />
+        <button onClick={AddTask}>Add Task</button>
+      </div>   
+      
+      <div className='List'>
+      {taskList.map((text,index) => {
+        return(<List key={index} text={text}/>)
+      })}
+      </div>
 
-      <form action="" className="NewTask" onSubmit={AddTask}>
-        <input type="text" name="" id="" />
-        <button>Add Task</button>
-      </form>
-
-      <List list={list}/>
     </div>
   )
 }

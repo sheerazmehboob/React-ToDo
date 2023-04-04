@@ -3,11 +3,10 @@ import './List.css'
 
 function List(props) {
   return (
-    <>
-      <ul className='List'>
-      {props.list}
-      </ul>
-    </>
+    <div className='taskContainer'>
+      <li id={props.key} key={props.index}>{props.text}</li>
+      <button className='bt-del'>X</button>
+    </div>
   )
 }
 
