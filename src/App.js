@@ -1,9 +1,10 @@
 import './App.css';
+import ToDo from './components/ToDo'
 
 function App() {
   return (
    <>
-    <h1 style={{textAlign:'center'}}>React Todo</h1>
+    <ToDo/>
    </>
   );
 }

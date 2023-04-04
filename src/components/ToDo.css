@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(203, 206, 209, 0.735);
+}
+
+.Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header{
+    align-self: flex-start;
+    padding: 1rem 2rem;
+    color: rgb(220, 155, 15);
+}
+
+
+.NewTask{
+    margin-top: 20px;
+}
+
+.NewTask button{
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    background-color: rgb(13, 157, 107);
+    color: white;
+}
+
+.NewTask button:hover{
+    background-color:teal;
+    transition: .5s ease-in-out;
+}
+
+.NewTask input{
+    width: 400px;
+    padding: 5px;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 18px;
+    outline: none;
+}
